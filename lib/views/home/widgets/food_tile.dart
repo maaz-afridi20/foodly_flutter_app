@@ -64,7 +64,35 @@ class FoodTile extends StatelessWidget {
                       text: "Delivery time : ${food['time']}",
                       style: appStyle(11, kGray, FontWeight.w400),
                     ),
-                    SizedBox(width: width * 0.7, child: Container()),
+                    SizedBox(
+                      width: width * 0.7,
+                      height: 18.h,
+                      child: ListView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: food['additives'].length,
+                        itemBuilder: (context, index) {
+                          var additive = food['additives'][index];
+                          return Container(
+                            width: 50.w,
+                            margin: EdgeInsets.only(right: 5.w),
+                            decoration: BoxDecoration(
+                              color: kSecondaryLight,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(9.r)),
+                            ),
+                            child: Center(
+                                child: Padding(
+                              padding: EdgeInsets.all(2.r),
+                              child: ReusableText(
+                                text: additive['title'],
+                                style: appStyle(8, kGray, FontWeight.w400),
+                              ),
+                            )),
+                          );
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -84,6 +112,23 @@ class FoodTile extends StatelessWidget {
               text: "\$ ${food['price']}",
               style: appStyle(12, kLightWhite, FontWeight.bold),
             )),
+          ),
+        ),
+        Positioned(
+          right: 75.w,
+          top: 6.h,
+          child: GestureDetector(
+            onTap: () {},
+            child: Container(
+              width: 19.w,
+              height: 19.h,
+              decoration: BoxDecoration(
+                  color: kSecondary, borderRadius: BorderRadius.circular(10.r)),
+              child: Center(
+                child: Icon(MaterialCommunityIcons.cart_plus,
+                    size: 15.h, color: kLightWhite),
+              ),
+            ),
           ),
         )
       ]),
