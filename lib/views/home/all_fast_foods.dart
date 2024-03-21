@@ -1,5 +1,4 @@
 import 'package:multi_vendor_food_app/utils/exports.dart';
-import 'package:multi_vendor_food_app/views/home/widgets/food_tile.dart';
 
 class AllFastFoods extends StatelessWidget {
   const AllFastFoods({super.key});
@@ -7,13 +6,14 @@ class AllFastFoods extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kSecondary,
       appBar: AppBar(
-          backgroundColor: kOffWhite,
+          backgroundColor: kSecondary,
           centerTitle: true,
           title: ReusableText(
-              text: "Fast Foods",
-              style: appStyle(13.sp, kGray, FontWeight.w600)),
-          elevation: .3),
+              text: "All Fast Foods",
+              style: appStyle(13.sp, kLightWhite, FontWeight.w600)),
+          elevation: 0),
       body: BackgroundContainer(
           color: kOffWhite,
           child: Padding(

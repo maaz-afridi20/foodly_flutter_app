@@ -6,6 +6,7 @@ class CategoryTile extends StatelessWidget {
     required this.category,
   });
 
+  // ignore: prefer_typing_uninitialized_variables
   final category;
 
   @override

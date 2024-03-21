@@ -22,3 +22,4 @@ export 'package:multi_vendor_food_app/views/home/widgets/food_list.dart';
 export 'package:flutter_rating_bar/flutter_rating_bar.dart';
 export 'package:multi_vendor_food_app/views/home/widgets/food_widget.dart';
 export 'package:google_fonts/google_fonts.dart';
+export 'package:multi_vendor_food_app/views/home/widgets/food_tile.dart';

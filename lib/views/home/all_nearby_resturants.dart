@@ -7,8 +7,14 @@ class AllNearbyRestaurants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(centerTitle: true, title: const Text('Nearby Restaurants')),
+      backgroundColor: kSecondary,
+      appBar: AppBar(
+          backgroundColor: kSecondary,
+          centerTitle: true,
+          title: ReusableText(
+              text: "NearBy Restaurants",
+              style: appStyle(13.sp, kLightWhite, FontWeight.w600)),
+          elevation: 0),
       body: BackgroundContainer(
           color: kOffWhite,
           child: Padding(

@@ -6,12 +6,25 @@ class Recommendations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kSecondary,
       appBar: AppBar(
-          backgroundColor: kOffWhite,
+          backgroundColor: kSecondary,
+          centerTitle: true,
           title: ReusableText(
-              text: "Recommendations",
-              style: appStyle(13.sp, kGray, FontWeight.w600)),
-          elevation: .3),
+              text: "Recommended",
+              style: appStyle(13.sp, kLightWhite, FontWeight.w600)),
+          elevation: 0),
+      body: BackgroundContainer(
+          color: kOffWhite,
+          child: Padding(
+            padding: EdgeInsets.all(12.h),
+            child: ListView(
+              children: List.generate(foods.length, (index) {
+                var food = foods[index];
+                return FoodTile(food: food);
+              }),
+            ),
+          )),
     );
   }
 }
